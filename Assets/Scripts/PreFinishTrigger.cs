@@ -10,8 +10,7 @@ private void OnTriggerEnter(Collider other)
             if (playerBehaviour)
             {
                 playerBehaviour.StartPreFinishBehavior();
-                Tutorial tutorial = FindObjectOfType<Tutorial>();
-                tutorial.DeactivateTutorial();
+                FindObjectOfType<Tutorial>().DeactivateTutorial();
             }
         }
     

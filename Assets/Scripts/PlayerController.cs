@@ -16,7 +16,6 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         _tutorial = FindObjectOfType<Tutorial>();
-        _tutorial.ActivateTutorial();
     }
     // Update is called once per frame
     void Update()

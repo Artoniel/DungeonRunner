@@ -30,6 +30,7 @@ public class GameManager : MonoBehaviour
         Progress.Instance.Save();
         _startMenu.SetActive(false);
         FindObjectOfType<PlayerBehaviour>().Play();
+        FindObjectOfType<Tutorial>().ActivateTutorial();
 
 #if UNITY_WEBGL && !UNITY_EDITOR
         Progress.Instance.Save();
