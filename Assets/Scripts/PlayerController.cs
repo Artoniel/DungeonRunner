@@ -11,7 +11,13 @@ public class PlayerController : MonoBehaviour
     private float _oldMousePositionX;
     private float _eulerY;
     private float _positionY = 0f;
+    private Tutorial _tutorial;
 
+    private void Start()
+    {
+        _tutorial = FindObjectOfType<Tutorial>();
+        _tutorial.ActivateTutorial();
+    }
     // Update is called once per frame
     void Update()
     {
@@ -21,6 +27,7 @@ public class PlayerController : MonoBehaviour
         {
             _oldMousePositionX = Input.mousePosition.x;
             _animator.SetBool("Run_b", true);
+            _tutorial.DeactivateTutorial();
         }
 
         if (Input.GetMouseButton(0))
@@ -43,6 +50,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetMouseButtonUp(0))
         {
             _animator.SetBool("Run_b", false);
+            _tutorial.ActivateTutorial();
         }
 
     }
