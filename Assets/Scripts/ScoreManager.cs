@@ -5,7 +5,7 @@ using UnityEngine;
 public class ScoreManager : MonoBehaviour
 {
     [DllImport("__Internal")]
-    private static extern void SetToLeaderboard();
+    private static extern void SetToLeaderboard(int value);
 
     [SerializeField] public int PlayerScore;
     [SerializeField] TextMeshProUGUI _text;
@@ -27,7 +27,7 @@ public class ScoreManager : MonoBehaviour
     public void SaveToProgress()
     {
 #if UNITY_WEBGL && !UNITY_EDITOR
-        SetToLeaderboard();
+        SetToLeaderboard(PlayerScore);
 #endif
         Progress.Instance.PlayerInfo.Score = PlayerScore;
     }
