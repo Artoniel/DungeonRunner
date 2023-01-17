@@ -53,10 +53,10 @@ public class Progress : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Backspace)) 
+        /*if (Input.GetKeyDown(KeyCode.Backspace)) 
         {
             ResetProgress();
-        }
+        }*/
     }
 
     public void Save()
