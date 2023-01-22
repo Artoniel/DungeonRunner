@@ -64,7 +64,7 @@ public class GameManager : MonoBehaviour
         {
             _coinManager.SaveToProgress();
             FindObjectOfType<ScoreManager>().SaveToProgress();
-            Progress.Instance.PlayerInfo.Level = SceneManager.GetActiveScene().buildIndex;
+            Progress.Instance.PlayerInfo.Level = nextScene;
 
 
             Progress.Instance.Save();

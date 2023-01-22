@@ -39,7 +39,17 @@ mergeInto(LibraryManager.library, {
 		console.log("SetToLeaderboard used!"); 
 		ysdk.getLeaderboards()
 		  .then(lb => {
-			lb.setLeaderboardScore('Score', value);
+			lb.getLeaderboardScore('Score')
+			  .then(currentScore => {
+				if (value > currentScore) {
+				  lb.setLeaderboardScore('Score', value);
+				}
+			  })
+			  .catch(err => {
+				if (err.code === 'LEADERBOARD_PLAYER_NOT_PRESENT') {
+				  lb.setLeaderboardScore('Score', value);
+				}
+			  });
 		  });
 	},
 	

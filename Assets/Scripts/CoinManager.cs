@@ -53,8 +53,10 @@ public class CoinManager : MonoBehaviour
     {
         _AdvButton.SetActive(false);
 #if UNITY_WEBGL && !UNITY_EDITOR
+        AudioListener.volume= 0;
         AddCoinsExtern(100);
 #endif
+        
     }
 
     public void AddCoins (int value)
