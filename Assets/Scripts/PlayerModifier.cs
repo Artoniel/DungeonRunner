@@ -28,11 +28,7 @@ public class PlayerModifier : MonoBehaviour
         SetMaxHealth(Progress.Instance.PlayerInfo.MaxHealth);
         UpdateHealth();
         SetLives(Progress.Instance.PlayerInfo.Lives);
-
-
     }
-
-   
 
     public void SetMaxHealth(int value)
     {
@@ -56,8 +52,6 @@ public class PlayerModifier : MonoBehaviour
     }
 
 
-  
-
     public void AddHealth(int value)
     {
         _health += value;
@@ -68,9 +62,7 @@ public class PlayerModifier : MonoBehaviour
             Die();
         }
     }
-
-    
-    
+        
     private void Die()
     {
         FindObjectOfType<AnimationManager>().Death();
@@ -83,7 +75,6 @@ public class PlayerModifier : MonoBehaviour
         {
             FindObjectOfType<GameManager>().ShowLoseWindow();
         }
-        
     }
 
     public void UpdateHealth()
@@ -91,6 +82,14 @@ public class PlayerModifier : MonoBehaviour
         _healthText.text = new string(_health.ToString() + "/" + _maxHealth.ToString()) ;
         float healthValue = ((float)_health) /((float)_maxHealth);
         _healthBar.value = healthValue;
-
+    }
+    public bool CheckHealth(int recievedDamage)
+    {
+        int encounterResult = _health + recievedDamage;
+        if (encounterResult > 0)
+        {
+            return true; 
+        }
+        return false;
     }
 }

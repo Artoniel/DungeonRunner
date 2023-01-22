@@ -25,10 +25,14 @@ public class Encounter : MonoBehaviour
             if (_value < 0) 
             {
                 _encounterTooltip.AttackAnimation();
-                FindObjectOfType<ScoreManager>().IncreaseScore(Mathf.Abs(_value));
-
+                
                 if (playerBehaviour)
                 {
+                    if (playerModifier.CheckHealth(_value))
+                    {
+                        Debug.Log("Add Score");
+                        FindObjectOfType<ScoreManager>().IncreaseScore(Mathf.Abs(_value));
+                    }
                     playerBehaviour.StartFightingBehavior(this.gameObject);
                 }
             }

@@ -8,9 +8,11 @@ public class ScoreManager : MonoBehaviour
     private static extern void SetToLeaderboard(int value);
 
     [SerializeField] public int PlayerScore;
-    [SerializeField] TextMeshProUGUI _text;
-    [SerializeField] TextMeshProUGUI _textFinish;
-    [SerializeField] TextMeshProUGUI _textLose;
+    [SerializeField] TextMeshProUGUI _textScore;
+    [SerializeField] TextMeshProUGUI _textScoreFinish;
+    [SerializeField] TextMeshProUGUI _textScoreLose;
+    [SerializeField] TextMeshProUGUI _textBestScoreLose;
+    [SerializeField] TextMeshProUGUI _textBestScoreFinish;
 
     private void Start()
     {
@@ -26,21 +28,35 @@ public class ScoreManager : MonoBehaviour
 
     public void SaveToProgress()
     {
+        CheckBestScore();
+
 #if UNITY_WEBGL && !UNITY_EDITOR
-        SetToLeaderboard(PlayerScore);
+        SetToLeaderboard(Progress.Instance.PlayerInfo.BestScore);
 #endif
+
+
         Progress.Instance.PlayerInfo.Score = PlayerScore;
     }
 
     private void UpdateScoreText()
     {
-        _text.text = PlayerScore.ToString();
-        _textLose.text = _text.text;
 
-        if (_textFinish != null)
+        _textScore.text = PlayerScore.ToString();
+        _textScoreLose.text = _textScore.text;
+        _textBestScoreLose.text = Progress.Instance.PlayerInfo.BestScore.ToString();
+
+        if (_textScoreFinish != null)
         {
-            _textFinish.text = _text.text;
+            _textScoreFinish.text = _textScore.text;
+            _textBestScoreFinish.text = _textBestScoreLose.text;
         }
+    }
 
+    private void CheckBestScore()
+    {
+        if (PlayerScore > Progress.Instance.PlayerInfo.BestScore)
+        {
+            Progress.Instance.PlayerInfo.BestScore = PlayerScore;
+        }
     }
 }

@@ -23,6 +23,8 @@ public class GameManager : MonoBehaviour
         _deathWindow.SetActive(false);
         _loseWindow.SetActive(false);
         _levelText.text = (SceneManager.GetActiveScene().buildIndex - 1).ToString();
+        SoundManager soundManager = FindObjectOfType<SoundManager>();
+        soundManager.UpdateSound();
     }
 
     public void Play()

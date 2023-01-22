@@ -52,11 +52,12 @@ public class CoinManager : MonoBehaviour
     public void ShowAdvButton()
     {
         _AdvButton.SetActive(false);
+        AudioListener.volume = 0;
 #if UNITY_WEBGL && !UNITY_EDITOR
-        AudioListener.volume= 0;
+        
         AddCoinsExtern(100);
 #endif
-        
+
     }
 
     public void AddCoins (int value)

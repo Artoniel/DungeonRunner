@@ -4618,6 +4618,11 @@ PrefabInstance:
       propertyPath: m_text
       value: "\u041F\u043E\u0431\u0435\u0434\u0430!"
       objectReference: {fileID: 0}
+    - target: {fileID: 1070649383128396698, guid: 3fcb60c5c36ae2541a5f6943b3f203c3,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -24.1
+      objectReference: {fileID: 0}
     - target: {fileID: 1417661877291292525, guid: 3fcb60c5c36ae2541a5f6943b3f203c3,
         type: 3}
       propertyPath: m_text
@@ -4650,6 +4655,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -8874454973334752126, guid: 4272a62348a2c32479a1d69b9b7e7b98,
         type: 2}
+    - target: {fileID: 1478308884349155331, guid: 3fcb60c5c36ae2541a5f6943b3f203c3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1478308885861683954, guid: 3fcb60c5c36ae2541a5f6943b3f203c3,
         type: 3}
       propertyPath: m_Name
@@ -4779,6 +4789,21 @@ PrefabInstance:
         type: 3}
       propertyPath: _tr
       value: Zindan
+      objectReference: {fileID: 0}
+    - target: {fileID: 5903348712152477157, guid: 3fcb60c5c36ae2541a5f6943b3f203c3,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -66.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8495577242519624284, guid: 3fcb60c5c36ae2541a5f6943b3f203c3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8681378402004476056, guid: 3fcb60c5c36ae2541a5f6943b3f203c3,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 180
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

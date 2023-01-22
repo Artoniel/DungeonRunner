@@ -11,6 +11,7 @@ public class PlayerInfo
     public int Level = 2;
     public int Lives = 1;
     public int Score;
+    public int BestScore;
     public bool SoundIsMuted = false;
     
 }
@@ -53,10 +54,10 @@ public class Progress : MonoBehaviour
 
     private void Update()
     {
-        /*if (Input.GetKeyDown(KeyCode.Backspace)) 
+        if (Input.GetKeyDown(KeyCode.Backspace)) 
         {
             ResetProgress();
-        }*/
+        }
     }
 
     public void Save()
@@ -71,8 +72,9 @@ public class Progress : MonoBehaviour
  
     public void ResetProgress()
     {
+        int scoreBuffer = PlayerInfo.BestScore;
         PlayerInfo = new PlayerInfo();
-
+        PlayerInfo.BestScore= scoreBuffer;
         Save();
     }
 

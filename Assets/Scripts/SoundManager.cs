@@ -7,7 +7,6 @@ public class SoundManager : MonoBehaviour
     private void Start()
     {
         _muted = Progress.Instance.PlayerInfo.SoundIsMuted;
-        UpdateSound();
     }
 
     public void MutePress()
@@ -19,6 +18,7 @@ public class SoundManager : MonoBehaviour
 
     public void UpdateSound()
     {
+        Debug.Log("SoundManager Updated!");
         if (_muted) AudioListener.volume = 0;
         else AudioListener.volume = 1;
     }
