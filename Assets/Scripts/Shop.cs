@@ -1,29 +1,37 @@
+using System.Runtime.InteropServices;
 using UnityEngine;
 
 public class Shop : MonoBehaviour
 {
-[SerializeField] private CoinManager _coinManager;
-private PlayerModifier _playerModifier;
+    [DllImport("__Internal")]
+    private static extern void AddLivesExtern();
 
 
-private void Start() 
-{
-    _playerModifier = FindObjectOfType<PlayerModifier>();
-}
+    [SerializeField] private CoinManager _coinManager;
+    [SerializeField] private GameObject _livesButton;
+    private PlayerModifier _playerModifier;
 
-   
+
+    private void Start() 
+    {
+        _playerModifier = FindObjectOfType<PlayerModifier>();
+    }
+
+    public void RewardedLives()
+    {
+#if UNITY_WEBGL && !UNITY_EDITOR
+        AddLivesExtern();
+#endif
+        
+    }
 
 
     public void BuyBonusLife()
     {
-        if (_coinManager.NumberOfCoins >= 150)
-        {
-            _coinManager.SpendMoney(150);
-            Progress.Instance.PlayerInfo.Coins = _coinManager.NumberOfCoins;
-            Progress.Instance.PlayerInfo.Lives ++;
-            _playerModifier.SetLives(Progress.Instance.PlayerInfo.Lives);
-
-        }
+        Progress.Instance.PlayerInfo.Lives ++;
+        _playerModifier.SetLives(Progress.Instance.PlayerInfo.Lives);
+        Progress.Instance.WatchedAdsCounter();
+        _livesButton.SetActive(false);
     }
 
     public void BuyMaxHealth()
@@ -32,7 +40,7 @@ private void Start()
         {
             _coinManager.SpendMoney(50);
             Progress.Instance.PlayerInfo.Coins = _coinManager.NumberOfCoins;
-            Progress.Instance.PlayerInfo.MaxHealth += 25;
+            Progress.Instance.PlayerInfo.MaxHealth += 15;
             _playerModifier.SetMaxHealth(Progress.Instance.PlayerInfo.MaxHealth);
             _playerModifier.UpdateHealth();
         }

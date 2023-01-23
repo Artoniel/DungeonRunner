@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Animator _animator;
 
     [SerializeField] private CharacterController _characterController;
-    private float _eulerAngleLimit = 70;
+    private float _eulerAngleLimit = 80;
     private float _positionLimitX = 2.5f;
     private float _oldMousePositionX;
     private float _eulerY;

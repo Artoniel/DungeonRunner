@@ -1,6 +1,6 @@
-using System.Collections;
 using System.Runtime.InteropServices;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 [System.Serializable]
@@ -10,10 +10,15 @@ public class PlayerInfo
     public int MaxHealth = 100;
     public int Level = 2;
     public int Lives = 1;
-    public int Score;
-    public int BestScore;
+    public int Score;    
     public bool SoundIsMuted = false;
-    
+    public int BestScore;
+
+    public int AdsWatched;
+    public bool RewardedSkinUnlocked;
+
+    public bool RewardedSkinOn;
+
 }
 
 public class Progress : MonoBehaviour
@@ -73,8 +78,12 @@ public class Progress : MonoBehaviour
     public void ResetProgress()
     {
         int scoreBuffer = PlayerInfo.BestScore;
+        int advBuffer = PlayerInfo.AdsWatched;
+        bool haveSkinBuffer = PlayerInfo.RewardedSkinUnlocked;
         PlayerInfo = new PlayerInfo();
         PlayerInfo.BestScore= scoreBuffer;
+        PlayerInfo.AdsWatched= advBuffer;
+        PlayerInfo.RewardedSkinUnlocked = haveSkinBuffer;
         Save();
     }
 
@@ -88,5 +97,15 @@ public class Progress : MonoBehaviour
 #if UNITY_WEBGL && !UNITY_EDITOR
         LoadExtern();
 #endif
+    }
+    public void WatchedAdsCounter()
+    {
+        if (PlayerInfo.RewardedSkinUnlocked) return;
+        PlayerInfo.AdsWatched++;
+        if (PlayerInfo.AdsWatched >= 15)
+        {
+            PlayerInfo.RewardedSkinUnlocked = true;
+        }
+        Save();
     }
 }

@@ -2,8 +2,6 @@ using Newtonsoft.Json.Linq;
 using System.Runtime.InteropServices;
 using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using static UnityEngine.Rendering.DebugUI;
 
 public class CoinManager : MonoBehaviour
 {
@@ -13,15 +11,17 @@ public class CoinManager : MonoBehaviour
 
     [SerializeField] public int NumberOfCoins;
     [SerializeField] TextMeshProUGUI _text;
+    [SerializeField] TextMeshProUGUI _textBonusCoins;
     [SerializeField] public GameObject _AdvButton;
 
     [SerializeField] public ButtonEffect _maxHealthEffect;
-    [SerializeField] public ButtonEffect _livesEffect;
 
     private ScoreManager scoreManager;
+    private int _bonusCoins;
     
     private void Start()
     {
+        _bonusCoins = 0;
         NumberOfCoins = Progress.Instance.PlayerInfo.Coins;
         UpdateCoins();
         ShopCoinUpdate();
@@ -34,6 +34,7 @@ public class CoinManager : MonoBehaviour
     public void AddOne()
     {        
         NumberOfCoins++;
+        _bonusCoins += 2;
         UpdateCoins();
         scoreManager.IncreaseScore(1);
     }
@@ -55,7 +56,7 @@ public class CoinManager : MonoBehaviour
         AudioListener.volume = 0;
 #if UNITY_WEBGL && !UNITY_EDITOR
         
-        AddCoinsExtern(100);
+        AddCoinsExtern(_bonusCoins);
 #endif
 
     }
@@ -64,12 +65,14 @@ public class CoinManager : MonoBehaviour
     {
         NumberOfCoins += value;
         UpdateCoins();
+        Progress.Instance.WatchedAdsCounter();
         SaveToProgress();
     }
 
     private void UpdateCoins()
     {
         _text.text = NumberOfCoins.ToString();
+        _textBonusCoins.text = ("+" + _bonusCoins.ToString());
        
     }
 
@@ -77,17 +80,13 @@ public class CoinManager : MonoBehaviour
     {
         _maxHealthEffect.ResetSize();
         _maxHealthEffect.GetComponentInParent<ButtonEffect>().enabled = false;
-        _livesEffect.ResetSize();
-        _livesEffect.GetComponentInParent<ButtonEffect>().enabled = false;
+        
 
 
         if (NumberOfCoins > 50)
         {
             _maxHealthEffect.GetComponentInParent<ButtonEffect>().enabled = true;
-            if (NumberOfCoins > 150)
-            {
-                _livesEffect.GetComponentInParent<ButtonEffect>().enabled = true;
-            }
+            
         }
     }
 }

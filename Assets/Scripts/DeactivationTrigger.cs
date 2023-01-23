@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ActivationTrigger : MonoBehaviour
+public class DeactivationTrigger : MonoBehaviour
 {
     [SerializeField] private GameObject _encounterLeft;
     [SerializeField] private GameObject _encounterRight;
@@ -9,18 +9,18 @@ public class ActivationTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
-            Activation();
+            Deactivation();
         }
     }
 
 
-    private void Activation()
+    private void Deactivation()
     {
-        _barrier.SetActive(true);
-        _encounterLeft.SetActive(true);
-        _encounterRight.SetActive(true);
-        _coinPocket.SetActive(true);
+        _barrier.SetActive(false);
+        _encounterLeft.SetActive(false);
+        _encounterRight.SetActive(false);
+        _coinPocket.SetActive(false);
     }
 }

@@ -20,6 +20,10 @@ public class PlayerBehaviour : MonoBehaviour
     {
         _playerController.enabled = true;
     }
+    public void Pause() 
+    {
+        _playerController.enabled = false;
+    }
     public void StartPreFinishBehavior()
     {
         _playerController.enabled = false;
