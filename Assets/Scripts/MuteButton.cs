@@ -1,9 +1,12 @@
+using System.Threading;
 using UnityEngine;
 
 public class MuteButton : MonoBehaviour
 {
     [SerializeField] GameObject _muteIcon;
     private bool _isMuted = false;
+    private bool _AdvPlaying;
+
 
     private void Start()
     {
@@ -27,6 +30,25 @@ public class MuteButton : MonoBehaviour
         else
         {
             _muteIcon.SetActive(false);
+        }
+    }
+
+    public void AdvMute()
+    {
+        _isMuted = Progress.Instance.PlayerInfo.SoundIsMuted;
+        if (!_isMuted)
+        {
+            MuteButtonPush();
+            _AdvPlaying= true;
+        }
+
+    }
+    public void AdvUnmute()
+    {
+        if (_AdvPlaying)
+        {
+            MuteButtonPush();
+            _AdvPlaying = false;
         }
     }
 }

@@ -52,8 +52,8 @@ public class CoinManager : MonoBehaviour
 
     public void ShowAdvButton()
     {
-        _AdvButton.SetActive(false);
-        AudioListener.volume = 0;
+        
+        FindObjectOfType<MuteButton>().AdvMute();
 #if UNITY_WEBGL && !UNITY_EDITOR
         
         AddCoinsExtern(_bonusCoins);
@@ -67,6 +67,8 @@ public class CoinManager : MonoBehaviour
         UpdateCoins();
         Progress.Instance.WatchedAdsCounter();
         SaveToProgress();
+        _AdvButton.SetActive(false);
+        FindObjectOfType<MuteButton>().AdvUnmute();
     }
 
     private void UpdateCoins()

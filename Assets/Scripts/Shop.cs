@@ -19,10 +19,11 @@ public class Shop : MonoBehaviour
 
     public void RewardedLives()
     {
+        FindObjectOfType<MuteButton>().AdvMute();
 #if UNITY_WEBGL && !UNITY_EDITOR
         AddLivesExtern();
 #endif
-        
+
     }
 
 
@@ -32,6 +33,7 @@ public class Shop : MonoBehaviour
         _playerModifier.SetLives(Progress.Instance.PlayerInfo.Lives);
         Progress.Instance.WatchedAdsCounter();
         _livesButton.SetActive(false);
+        FindObjectOfType<MuteButton>().AdvUnmute();
     }
 
     public void BuyMaxHealth()

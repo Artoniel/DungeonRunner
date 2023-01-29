@@ -12,6 +12,12 @@ public class ButtonEffect : MonoBehaviour
     // The duration of the scale animation in seconds
     [SerializeField] private float duration = 1f;
 
+    private Vector3 _scaleBuffer;
+
+    private void Start()
+    {
+        _scaleBuffer = _button.transform.localScale;
+    }
 
     // Update is called once per frame
     void Update()
@@ -27,6 +33,6 @@ public class ButtonEffect : MonoBehaviour
     }
     public void ResetSize()
     {
-        _button.transform.localScale = new Vector3(1, 1, 1);
+        _button.transform.localScale = _scaleBuffer;
     }
 }

@@ -5065,6 +5065,10 @@ PrefabInstance:
       propertyPath: _ru
       value: "\u041F\u043E\u0431\u0435\u0434\u0430!"
       objectReference: {fileID: 0}
+    - target: {fileID: 1463611215, guid: 3fcb60c5c36ae2541a5f6943b3f203c3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 594136434292704717, guid: 3fcb60c5c36ae2541a5f6943b3f203c3,
         type: 3}
       propertyPath: m_IsActive
