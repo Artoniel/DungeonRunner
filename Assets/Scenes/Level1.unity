@@ -2960,6 +2960,46 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5625162650757647731, guid: 3fcb60c5c36ae2541a5f6943b3f203c3,
+        type: 3}
+      propertyPath: m_text
+      value: "\u041B\u0435\u0441"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5625162650757647731, guid: 3fcb60c5c36ae2541a5f6943b3f203c3,
+        type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.038576365
+      objectReference: {fileID: 0}
+    - target: {fileID: 5625162650757647731, guid: 3fcb60c5c36ae2541a5f6943b3f203c3,
+        type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5625162650757647731, guid: 3fcb60c5c36ae2541a5f6943b3f203c3,
+        type: 3}
+      propertyPath: m_fontColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5625162650757647731, guid: 3fcb60c5c36ae2541a5f6943b3f203c3,
+        type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278910720
+      objectReference: {fileID: 0}
+    - target: {fileID: 5689051683773586474, guid: 3fcb60c5c36ae2541a5f6943b3f203c3,
+        type: 3}
+      propertyPath: _en
+      value: Forest
+      objectReference: {fileID: 0}
+    - target: {fileID: 5689051683773586474, guid: 3fcb60c5c36ae2541a5f6943b3f203c3,
+        type: 3}
+      propertyPath: _ru
+      value: "\u041B\u0435\u0441"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5689051683773586474, guid: 3fcb60c5c36ae2541a5f6943b3f203c3,
+        type: 3}
+      propertyPath: _tr
+      value: Orman
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4767,7 +4807,7 @@ PrefabInstance:
     - target: {fileID: 7338390157793536194, guid: aff798d927f7d794ba3979b72e59ea5d,
         type: 3}
       propertyPath: m_text
-      value: -16
+      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: 7338390157852929087, guid: aff798d927f7d794ba3979b72e59ea5d,
         type: 3}
@@ -8875,7 +8915,7 @@ PrefabInstance:
     - target: {fileID: 7338390157793536194, guid: aff798d927f7d794ba3979b72e59ea5d,
         type: 3}
       propertyPath: m_text
-      value: -12
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 7338390157852929087, guid: aff798d927f7d794ba3979b72e59ea5d,
         type: 3}
@@ -9375,7 +9415,7 @@ PrefabInstance:
     - target: {fileID: 7338390158204674768, guid: aff798d927f7d794ba3979b72e59ea5d,
         type: 3}
       propertyPath: m_text
-      value: -28
+      value: -12
       objectReference: {fileID: 0}
     - target: {fileID: 7338390158204674773, guid: aff798d927f7d794ba3979b72e59ea5d,
         type: 3}
@@ -13055,7 +13095,7 @@ PrefabInstance:
     - target: {fileID: 7338390158204674768, guid: aff798d927f7d794ba3979b72e59ea5d,
         type: 3}
       propertyPath: m_text
-      value: -16
+      value: -9
       objectReference: {fileID: 0}
     - target: {fileID: 7338390158204674773, guid: aff798d927f7d794ba3979b72e59ea5d,
         type: 3}
@@ -13600,7 +13640,7 @@ PrefabInstance:
     - target: {fileID: 7338390158204674768, guid: aff798d927f7d794ba3979b72e59ea5d,
         type: 3}
       propertyPath: m_text
-      value: -13
+      value: -8
       objectReference: {fileID: 0}
     - target: {fileID: 7338390158388205312, guid: aff798d927f7d794ba3979b72e59ea5d,
         type: 3}

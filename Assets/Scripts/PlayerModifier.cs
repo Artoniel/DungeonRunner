@@ -83,13 +83,15 @@ public class PlayerModifier : MonoBehaviour
         float healthValue = ((float)_health) /((float)_maxHealth);
         _healthBar.value = healthValue;
     }
-    public bool CheckHealth(int recievedDamage)
+    public bool CheckHealth()
     {
-        int encounterResult = _health + recievedDamage;
-        if (encounterResult > 0)
+        Debug.Log("Health "+ _health.ToString());
+        if (_health > 0)
         {
+            Debug.Log("Encresult True");
             return true; 
         }
+        Debug.Log("Encresult False");
         return false;
     }
 }

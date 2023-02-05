@@ -5069,6 +5069,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 160094582258732110, guid: 3fcb60c5c36ae2541a5f6943b3f203c3,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.30000305
+      objectReference: {fileID: 0}
     - target: {fileID: 594136434292704717, guid: 3fcb60c5c36ae2541a5f6943b3f203c3,
         type: 3}
       propertyPath: m_IsActive
@@ -5079,10 +5084,27 @@ PrefabInstance:
       propertyPath: m_text
       value: "\u041F\u043E\u0431\u0435\u0434\u0430!"
       objectReference: {fileID: 0}
+    - target: {fileID: 837427972374516748, guid: 3fcb60c5c36ae2541a5f6943b3f203c3,
+        type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 4272a62348a2c32479a1d69b9b7e7b98,
+        type: 2}
+    - target: {fileID: 837427972374516748, guid: 3fcb60c5c36ae2541a5f6943b3f203c3,
+        type: 3}
+      propertyPath: m_fontStyle
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 837427972374516748, guid: 3fcb60c5c36ae2541a5f6943b3f203c3,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -8874454973334752126, guid: 4272a62348a2c32479a1d69b9b7e7b98,
+        type: 2}
     - target: {fileID: 1070649383128396698, guid: 3fcb60c5c36ae2541a5f6943b3f203c3,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -24.1
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 1417661877291292525, guid: 3fcb60c5c36ae2541a5f6943b3f203c3,
         type: 3}
@@ -5186,6 +5208,16 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: RestartGame
       objectReference: {fileID: 0}
+    - target: {fileID: 3387943725747553938, guid: 3fcb60c5c36ae2541a5f6943b3f203c3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3754521661045685445, guid: 3fcb60c5c36ae2541a5f6943b3f203c3,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 40.300003
+      objectReference: {fileID: 0}
     - target: {fileID: 3827470069712267133, guid: 3fcb60c5c36ae2541a5f6943b3f203c3,
         type: 3}
       propertyPath: m_IsActive
@@ -5254,7 +5286,7 @@ PrefabInstance:
     - target: {fileID: 5903348712152477157, guid: 3fcb60c5c36ae2541a5f6943b3f203c3,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -66.9
+      value: -70.4
       objectReference: {fileID: 0}
     - target: {fileID: 8495577242519624284, guid: 3fcb60c5c36ae2541a5f6943b3f203c3,
         type: 3}
@@ -5265,6 +5297,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SizeDelta.y
       value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 8681378402004476056, guid: 3fcb60c5c36ae2541a5f6943b3f203c3,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 205
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
